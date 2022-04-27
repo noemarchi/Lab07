@@ -1,0 +1,24 @@
+EVENTO =
+- anno
+- durata
+- persone
+
+SOLUZIONE PARZIALE = insieme di eventi
+- entro un numero massimo di anni X
+- con un numero totale di ore < Y
+
+SOLUZIONE TOTALE = insieme di eventi
+- entro un numero massimo di anni X
+- con un numero totale di ore <= Y
+
+LIVELLO = numero di eventi della soluzione parziale
+
+AVVIO RICORSIONE: dal livello 0 --> nessun evento ancora selezionato
+
+CONDIZIONE DI TERMINAZIONE:
+- numero totale di ore <= Y --> potrebbe essere una soluzione, è la migliore?
+- numero totale di ore > Y --> non può essere una soluzione, return, esco dalla ricorsione
+- intervallo anni > X --> non può essere una soluzione, return, esco dalla ricorsione 
+- al livello = numero di tutti i blackout di quel Nerc (ho già aggiunto tutti i blackout)
+
+STRUTTURE DATI:

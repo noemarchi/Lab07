@@ -6,7 +6,8 @@ public class TestPowerOutagesDAO {
 
 	public static void main(String[] args) {
 		
-		try {
+		try 
+		{
 			Connection connection = ConnectDB.getConnection();
 			connection.close();
 			System.out.println("Connection Test PASSED");
@@ -15,7 +16,9 @@ public class TestPowerOutagesDAO {
 			
 			System.out.println(dao.getNercList()) ;
 
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			System.err.println("Test FAILED");
 		}
 

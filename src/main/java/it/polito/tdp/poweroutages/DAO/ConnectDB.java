@@ -19,12 +19,14 @@ public class ConnectDB {
 	private static final String jdbcURL = "jdbc:mysql://localhost/poweroutages";
 	private static HikariDataSource ds;
 	
-	public static Connection getConnection() {
-		if(ds == null) {
+	public static Connection getConnection() 
+	{
+		if(ds == null) 
+		{
 			HikariConfig config = new HikariConfig();
 			config.setJdbcUrl(jdbcURL);
 			config.setUsername("root");
-			config.setPassword("root");
+			config.setPassword("S4nsone1");
 			
 			config.addDataSourceProperty("cachePrepStmts", true);
 			config.addDataSourceProperty("prepStmtChacheSize", 250);
@@ -33,10 +35,12 @@ public class ConnectDB {
 			ds = new HikariDataSource(config);
 		}
 		
-		try {
+		try 
+		{
 			return ds.getConnection();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		} 
+		catch (SQLException e) 
+		{
 			System.err.println("Errore di connessione ad db");
 			throw new RuntimeException(e);
 		}
